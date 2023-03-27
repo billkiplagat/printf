@@ -20,11 +20,28 @@ putchar(c);
 */
 void handle_integer(va_list args, int *count)
 {
-char str[65];
-char *ptr;
-ptr = int_to_str(va_arg(args, int), str, 10);
-handle_string(ptr,  count);
+	char str[65];
+	char *ptr;
+
+	if (sizeof(int) == 4)
+	{
+		ptr = int_to_str(va_arg(args, int), str, 10);
+	}
+	else if (sizeof(long) == 8)
+	{
+		ptr = long_to_str(va_arg(args, long), str, 10);
+	}
+	else if (sizeof(long long) == 8)
+	{
+		ptr = long_long_to_str(va_arg(args, long long), str, 10);
+	}
+	else
+	{
+		return;
+	}
+	handle_string(ptr, count);
 }
+
 /**
 * int_to_str - function to handle integers
 * @num: arguments input

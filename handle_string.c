@@ -9,7 +9,7 @@ void handle_string(char *ptr, int *count)
 {
 	while (*ptr)
 	{
-		_putchar(*ptr++);
+		putchar(*ptr++);
 		(*count)++;
 	}
 }
