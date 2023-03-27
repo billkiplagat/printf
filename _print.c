@@ -27,10 +27,19 @@ int _printf(const char *format, ...)
 				handle_string(str, &count);
 				break;
 			case 'i': case 'd':
-				handle_integer(args, &count);
+				handle_integer(args, &count, 10);
 				break;
 			case '%':
 				handle_percent(&count);
+				break;
+			case 'b':
+				handle_integer(args, &count, 2);
+				break;
+			case 'o':
+				handle_integer(args, &count, 8);
+				break;
+			case 'x':
+				handle_integer(args, &count, 16);
 				break;
 			default:
 				putchar('%');

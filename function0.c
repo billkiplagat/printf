@@ -18,11 +18,29 @@ putchar(c);
 * @args: argument list
 *
 */
-void handle_integer(va_list args, int *count)
+void handle_integer(va_list args, int *count, int base)
+{
+	char *str;
+	char *ptr;
+	int num = va_arg(args, int);
+
+	int len = snprintf(NULL, 0, "%d", num);
+	if (num < 0) {
+		len++;
+	}
+	len++;
+
+	str = (char *)malloc(len * sizeof(char));
+	ptr = int_to_str(num, str, base);
+	handle_string(ptr, count);
+	free(str);
+}
+
+void ahandle_integer(va_list args, int *count, int base)
 {
 char str[65];
 char *ptr;
-ptr = int_to_str(va_arg(args, int), str, 10);
+ptr = int_to_str(va_arg(args, int), str, base);
 handle_string(ptr,  count);
 }
 /**
