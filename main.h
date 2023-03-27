@@ -12,4 +12,5 @@ void handle_string(char *, int *count);
 char *int_to_str(int num, char *str, int base);
 void handle_percent(int *count);
 void handle_integer(va_list args, int *count);
+int _putchar(char);
 #endif
