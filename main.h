@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+int _printf(const char *format, ...);
 void handle_char(va_list args, int *count);
 void handle_string(char *, int *count);
 char *int_to_str(int num, char *str, int base);
