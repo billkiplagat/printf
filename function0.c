@@ -13,18 +13,17 @@ putchar(c);
 (*count)++;
 }
 /**
-* handle_string - function to print strings
+* handle_integer - function to print strings
 * @count: pointer to counter
-* @ptr: pointer to a string
+* @args: argument list
 *
 */
-void handle_string(char *ptr, int *count)
+void handle_integer(va_list args, int *count)
 {
-while (*ptr)
-{
-putchar(*ptr++);
-(*count)++;
-}
+char str[65];
+char *ptr;
+ptr = int_to_str(va_arg(args, int), str, 10);
+handle_string(ptr,  count);
 }
 /**
 * int_to_str - function to handle integers
@@ -36,7 +35,7 @@ putchar(*ptr++);
 */
 char *int_to_str(int num, char *str, int base)
 {
-int i = 0;
+int i = 0, len, j;
 int is_negative = 0, digit;
 if (num < 0 && base == 10)
 {
@@ -53,9 +52,8 @@ if (is_negative)
 str[i++] = '-';
 }
 str[i] = '\0';
-int j = 0;
-int len = strlen(str);
-for (j; j < len / 2; j++)
+len = strlen(str);
+for (j = 0; j < len / 2; j++)
 {
 char temp = str[j];
 str[j] = str[len - j - 1];
