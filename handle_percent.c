@@ -5,6 +5,6 @@
  */
 void handle_percent(int *count)
 {
-	putchar('%');
+	_putchar('%');
 	(*count)++;
 }
