@@ -5,7 +5,7 @@
 #include <limits.h>
 #include <unistd.h>
 #include <stdlib.h>
-
+#include <string.h>
 int _printf(const char *format, ...);
 void handle_char(va_list args, int *count);
 void handle_string(char *, int *count);
@@ -13,4 +13,5 @@ char *int_to_str(int num, char *str, int base);
 void handle_percent(int *count);
 void handle_integer(va_list args, int *count, int base);
 int _putchar(char);
+int mainBuffer();
 #endif
