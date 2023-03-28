@@ -29,6 +29,9 @@ int _printf(const char *format, ...)
 			case 'i': case 'd':
 				handle_integer(args, &count, 10);
 				break;
+			case 'u':
+				handle_unsigned(args, &count, 10);
+				break;
 			case '%':
 				handle_percent(&count);
 				break;
@@ -41,10 +44,11 @@ int _printf(const char *format, ...)
 			case 'x':
 				handle_integer(args, &count, 16);
 				break;
+			case 'p':
+				handle_pointers(args, &count, 16);
+				break;
 			default:
-				putchar('%');
-				putchar(ch);
-				count += 2;
+				handle_default(ch, &count);
 				break;
 			}
 		}
