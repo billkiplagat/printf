@@ -5,7 +5,7 @@
  * @count: Number of characters printed
  * @args: ....
  */
-void handle_unsigned(va_list args, int *count, int base)
+void handle_unsigned_int(va_list args, int *count, int base)
 {
 	char str[65];
 	char *ptr;

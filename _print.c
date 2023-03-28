@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * _printf - implements the printf function
  * @format: A string constant
@@ -30,19 +29,13 @@ int _printf(const char *format, ...)
 				handle_integer(args, &count, 10);
 				break;
 			case 'u':
-				handle_unsigned(args, &count, 10);
+				handle_unsigned_int(args, &count, 10);
 				break;
 			case '%':
 				handle_percent(&count);
 				break;
 			case 'b':
 				handle_integer(args, &count, 2);
-				break;
-			case 'o':
-				handle_integer(args, &count, 8);
-				break;
-			case 'x':
-				handle_integer(args, &count, 16);
 				break;
 			case 'p':
 				handle_pointers(args, &count, 16);

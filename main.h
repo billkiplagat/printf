@@ -9,7 +9,7 @@
 int _printf(const char *format, ...);
 void handle_char(va_list args, int *count);
 void handle_string(char *, int *count);
-void handle_unsigned(va_list args, int *, int);
+void handle_unsigned_int(va_list args, int *, int);
 char *int_to_str(unsigned int num, char *str, int base);
 char *int_to_stra(long int num, char *str, int base);
 void handle_default(char, int *);

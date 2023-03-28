@@ -11,7 +11,7 @@ char *int_to_str(unsigned int num, char *str, int base)
 {
 	int i = 0, j, len;
 	unsigned int digit;
-	char tmp;
+	char temp;
 
 	do {
 		digit = num % base;
