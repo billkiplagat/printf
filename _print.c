@@ -31,6 +31,15 @@ int _printf(const char *format, ...)
 			case 'u':
 				handle_unsigned_int(args, &count, 10);
 				break;
+			case 'X':
+				handle_unsigned_int(args, &count, 16);
+				break;
+			case 'x':
+				handle_hex(args, &count, 16);
+				break;
+			case 'o':
+				handle_unsigned_int(args, &count, 8);
+				break;
 			case '%':
 				handle_percent(&count);
 				break;

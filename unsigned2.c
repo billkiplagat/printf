@@ -7,7 +7,7 @@
  * @base: ...
  * Return: ...
  */
-char *int_to_str(unsigned int num, char *str, int base)
+char *int_to_str1(unsigned int num, char *str, int base)
 {
 	int i = 0, j, len;
 	unsigned int digit;
@@ -19,7 +19,7 @@ char *int_to_str(unsigned int num, char *str, int base)
 		return (NULL);
 	do {
 		digit = num % base;
-		str[i++] = (digit > 9) ? 'A' + digit - 10 : '0' + digit;
+		str[i++] = (digit > 9) ? 'a' + digit - 10 : '0' + digit;
 		num /= base;
 	} while (num != 0);
 	str[i] = '\0';
