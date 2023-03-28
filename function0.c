@@ -16,26 +16,32 @@ putchar(c);
 * handle_integer - function to print strings
 * @count: pointer to counter
 * @args: argument list
+* @base: base 10
 *
 */
 void handle_integer(va_list args, int *count, int base)
 {
-	char *str;
-	char *ptr;
-	int num = va_arg(args, int);
-
-	int len = snprintf(NULL, 0, "%d", num);
-	if (num < 0) {
-		len++;
-	}
-	len++;
-
-	str = (char *)malloc(len * sizeof(char));
-	ptr = int_to_str(num, str, base);
-	handle_string(ptr, count);
-	free(str);
+char *str;
+char *ptr;
+int num = va_arg(args, int);
+int len = snprintf(NULL, 0, "%d", num);
+if (num < 0)
+{
+len++;
 }
-
+len++;
+str = (char *)malloc(len *sizeof(char));
+ptr = int_to_str(num, str, base);
+handle_string(ptr, count);
+free(str);
+}
+/**
+* ahandle_integer - function to print strings
+* @count: pointer to counter
+* @args: argument list
+* @base: base 10
+*
+*/
 void ahandle_integer(va_list args, int *count, int base)
 {
 char str[65];
