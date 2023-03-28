@@ -14,4 +14,5 @@ void handle_percent(int *count);
 void handle_integer(va_list args, int *count, int base);
 int _putchar(char);
 int mainBuffer();
+int printf_string(const char *format, ...);
 #endif
